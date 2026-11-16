@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.taglens.scanner.share" android:versionCode="12" android:versionName="1.6.3">
+  <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <application android:label="TagLens" android:icon="@drawable/icon" android:allowBackup="false" android:theme="@android:style/Theme.Material.NoActionBar">
+    <activity android:name="com.taglens.scanner.MainActivity" android:exported="true" android:screenOrientation="portrait">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <provider android:name="com.taglens.scanner.ResultShare"
+        android:authorities="com.taglens.scanner.share.results"
+        android:exported="false" android:grantUriPermissions="true" />
+  </application>
+</manifest>
